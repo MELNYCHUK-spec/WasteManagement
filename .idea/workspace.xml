@@ -5,44 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c1c81f0-7257-45a1-b437-480c506ade79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20261025_hurghada_demo_locations.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20261027_odesa_demo_locations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/20261027_odesa_demo_locations.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/i18n.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/i18n.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/WebstormProjects/WasteManagement" value="3LKV40AQDPxx2di8M9lwl0eojte" />
+    </persistenceIdMap>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MELNYCHUK-spec&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MELNYCHUK-spec/WasteManagement.git&quot;,
+    &quot;accountId&quot;: &quot;2fec71d5-7e5a-4419-b860-c25671d30a43&quot;
+  }
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.4410169567571254" />
-      <entry key="MS500" value="3.559102083940416" />
-      <entry key="S2" value="9.850113430251238" />
-      <entry key="S5" value="19.558144893218838" />
-      <entry key="S10" value="32.898650761692764" />
-      <entry key="S30" value="59.725660892550366" />
-      <entry key="S60" value="76.20348044882704" />
-      <entry key="M2" value="109.74771725074417" />
-      <entry key="M5" value="186.500872874372" />
-      <entry key="M10" value="239.90944434890255" />
-      <entry key="M15" value="263.0866028648995" />
-      <entry key="M30" value="293.15635152780715" />
-      <entry key="H1" value="367.3954916742344" />
-      <entry key="H2" value="587.9591998332966" />
-      <entry key="H4" value="898.8705745051573" />
-      <entry key="D1" value="1412.190414812344" />
-      <entry key="W1" value="1537.714520001229" />
+      <entry key="MS100" value="1.6976270283850032" />
+      <entry key="MS500" value="4.424029253875651" />
+      <entry key="S2" value="11.438703862424607" />
+      <entry key="S5" value="23.646075591783717" />
+      <entry key="S10" value="37.20302932363045" />
+      <entry key="S30" value="56.249137345063616" />
+      <entry key="S60" value="68.27241795850615" />
+      <entry key="M2" value="92.75663671235866" />
+      <entry key="M5" value="146.2765598626895" />
+      <entry key="M10" value="214.45538377847498" />
+      <entry key="M15" value="282.8437076832529" />
+      <entry key="M30" value="437.1709914869149" />
+      <entry key="H1" value="619.1121562245903" />
+      <entry key="H2" value="898.5758301453526" />
+      <entry key="H4" value="1258.1785525580678" />
+      <entry key="D1" value="1865.5302273548034" />
+      <entry key="W1" value="2017.812593901296" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -64,23 +85,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3949056912465343" />
-      <entry key="MS500" value="3.5378426316913543" />
-      <entry key="S2" value="9.834455799892774" />
-      <entry key="S5" value="19.545196988324072" />
-      <entry key="S10" value="32.88765588885919" />
-      <entry key="S30" value="59.718999370134895" />
-      <entry key="S60" value="76.19921404673894" />
-      <entry key="M2" value="109.74458115708313" />
-      <entry key="M5" value="186.4986831509678" />
-      <entry key="M10" value="239.90802251122733" />
-      <entry key="M15" value="263.0855602252866" />
-      <entry key="M30" value="293.1557648122786" />
-      <entry key="H1" value="367.39509241156077" />
-      <entry key="H2" value="587.958837033535" />
-      <entry key="H4" value="898.8702783873522" />
-      <entry key="D1" value="1412.1903340020226" />
-      <entry key="W1" value="1537.7145073598733" />
+      <entry key="MS100" value="1.637648676971433" />
+      <entry key="MS500" value="4.395450407723047" />
+      <entry key="S2" value="11.420301896307857" />
+      <entry key="S5" value="23.630822647021336" />
+      <entry key="S10" value="37.19089811108565" />
+      <entry key="S30" value="56.24294315326735" />
+      <entry key="S60" value="68.26862818027647" />
+      <entry key="M2" value="92.75400611707293" />
+      <entry key="M5" value="146.27482611304356" />
+      <entry key="M10" value="214.45402225753577" />
+      <entry key="M15" value="282.8424483535598" />
+      <entry key="M30" value="437.1699581116491" />
+      <entry key="H1" value="619.1113929038927" />
+      <entry key="H2" value="898.5752486122379" />
+      <entry key="H4" value="1258.1781310062129" />
+      <entry key="D1" value="1865.5301201416335" />
+      <entry key="W1" value="2017.8125772606422" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -88,33 +109,51 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3LCKvcd8rl1etG4uBZDwX7sXgif" />
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="ensembleEnabled" value="false" />
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WebstormProjects/WasteManagement&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\WebstormProjects\\WasteManagement\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "D:/WebstormProjects/WasteManagement",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "D:\\WebstormProjects\\WasteManagement\\node_modules\\typescript\\lib"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WebstormProjects\WasteManagement" />
@@ -139,7 +178,12 @@
       <workItem from="1792958507060" duration="3104000" />
       <workItem from="1793003574971" duration="45000" />
       <workItem from="1793003729515" duration="8572000" />
-      <workItem from="1793051479058" duration="1736000" />
+      <workItem from="1793051479058" duration="1994000" />
+      <workItem from="1793083436827" duration="861000" />
+      <workItem from="1793098448806" duration="1661000" />
+      <workItem from="1793177374856" duration="4049000" />
+      <workItem from="1793202482359" duration="60000" />
+      <workItem from="1793202551959" duration="2339000" />
     </task>
     <servers />
   </component>

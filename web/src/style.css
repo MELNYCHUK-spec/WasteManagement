@@ -108,6 +108,7 @@
 .popup-fill.warning{color:#b7832d}
 .popup-fill.full{color:#c45f51}
 .map-legend{z-index:500;pointer-events:none}
+.map-legend{bottom:17px}
 .bottom-grid{grid-template-columns:minmax(0,1fr)}
 .location-button{white-space:nowrap}
 .location-button:disabled{opacity:.65;cursor:wait}

@@ -2,7 +2,7 @@ import 'dotenv/config';
 
 const api = process.env.API_URL || 'http://localhost:4000';
 const interval = Number(process.env.SIMULATOR_INTERVAL_MS || 15000);
-const containers = ['CNT-001','CNT-002','CNT-003','CNT-004','CNT-005','CNT-006','CNT-007','CNT-008'];
+const containers = ['CNT-001','CNT-002','CNT-003','CNT-004','CNT-005','CNT-006','CNT-007','CNT-008','CNT-009','CNT-010'];
 console.log(`Sensor simulator → ${api} every ${interval} ms`);
 async function sendReadings() {
   await Promise.all(containers.map(async (containerId) => {

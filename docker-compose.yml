@@ -43,7 +43,7 @@ services:
     command: ["http", "api:4000", "--log", "stdout"]
     environment:
       NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN:-}
-    restart: unless-stopped
+    restart: always
     depends_on:
       api: { condition: service_healthy }
 volumes:

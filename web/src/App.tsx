@@ -13,15 +13,17 @@ const demoBins: Bin[] = [
   {id:'CNT-001',name:'Контейнер 01',address:'вул. Дерибасівська · демо-точка',latitude:46.4844,longitude:30.7344,capacity_kg:120,fill_percent:92,status:'full',waste_type:'mixed',last_update:new Date().toISOString()},
   {id:'CNT-002',name:'Контейнер 02',address:'Приморський бульвар · демо-точка',latitude:46.4886,longitude:30.7419,capacity_kg:100,fill_percent:78,status:'warning',waste_type:'plastic',last_update:new Date().toISOString()},
   {id:'CNT-003',name:'Контейнер 03',address:'вул. Преображенська · демо-точка',latitude:46.4782,longitude:30.7320,capacity_kg:120,fill_percent:64,status:'normal',waste_type:'mixed',last_update:new Date().toISOString()},
-  {id:'CNT-004',name:'Контейнер 04',address:'Молдаванка · демо-точка',latitude:46.4742,longitude:30.7144,capacity_kg:100,fill_percent:38,status:'normal',waste_type:'paper',last_update:new Date().toISOString()},
-  {id:'CNT-005',name:'Контейнер 05',address:'Аркадія · демо-точка',latitude:46.4304,longitude:30.7620,capacity_kg:150,fill_percent:87,status:'full',waste_type:'mixed',last_update:new Date().toISOString()},
+  {id:'CNT-004',name:'Контейнер 04',address:'вул. Михайла Грушевського · демо-точка',latitude:46.4742,longitude:30.7144,capacity_kg:100,fill_percent:38,status:'normal',waste_type:'paper',last_update:new Date().toISOString()},
+  {id:'CNT-005',name:'Контейнер 05',address:'Аркадійська алея · демо-точка',latitude:46.4304,longitude:30.7620,capacity_kg:150,fill_percent:87,status:'full',waste_type:'mixed',last_update:new Date().toISOString()},
   {id:'CNT-006',name:'Контейнер 06',address:'Французький бульвар · демо-точка',latitude:46.4440,longitude:30.7580,capacity_kg:100,fill_percent:52,status:'normal',waste_type:'glass',last_update:new Date().toISOString()},
-  {id:'CNT-007',name:'Контейнер 07',address:'Пересип · демо-точка',latitude:46.5160,longitude:30.7280,capacity_kg:120,fill_percent:71,status:'warning',waste_type:'mixed',last_update:new Date().toISOString()},
-  {id:'CNT-008',name:'Контейнер 08',address:'Залізничний вокзал · демо-точка',latitude:46.4686,longitude:30.7408,capacity_kg:100,fill_percent:24,status:'normal',waste_type:'plastic',last_update:new Date().toISOString()},
+  {id:'CNT-007',name:'Контейнер 07',address:'Миколаївська дорога · демо-точка',latitude:46.5160,longitude:30.7280,capacity_kg:120,fill_percent:71,status:'warning',waste_type:'mixed',last_update:new Date().toISOString()},
+  {id:'CNT-008',name:'Контейнер 08',address:'вул. Пантелеймонівська · демо-точка',latitude:46.4686,longitude:30.7408,capacity_kg:100,fill_percent:24,status:'normal',waste_type:'plastic',last_update:new Date().toISOString()},
+  {id:'CNT-009',name:'Контейнер 09',address:'вул. Космонавтів · демо-точка',latitude:46.4355,longitude:30.7110,capacity_kg:120,fill_percent:58,status:'normal',waste_type:'paper',last_update:new Date().toISOString()},
+  {id:'CNT-010',name:'Контейнер 10',address:'вул. Академіка Корольова · демо-точка',latitude:46.4055,longitude:30.7215,capacity_kg:120,fill_percent:76,status:'warning',waste_type:'glass',last_update:new Date().toISOString()},
 ];
 const demoAddresses: Record<Language, Record<string, string>> = {
-  uk: {'CNT-001':'вул. Дерибасівська · демо-точка','CNT-002':'Приморський бульвар · демо-точка','CNT-003':'вул. Преображенська · демо-точка','CNT-004':'Молдаванка · демо-точка','CNT-005':'Аркадія · демо-точка','CNT-006':'Французький бульвар · демо-точка','CNT-007':'Пересип · демо-точка','CNT-008':'Залізничний вокзал · демо-точка'},
-  en: {'CNT-001':'Derybasivska Street · demo location','CNT-002':'Primorskyi Boulevard · demo location','CNT-003':'Preobrazhenska Street · demo location','CNT-004':'Moldavanka · demo location','CNT-005':'Arcadia · demo location','CNT-006':'French Boulevard · demo location','CNT-007':'Peresyp · demo location','CNT-008':'Odesa Railway Station · demo location'},
+  uk: {'CNT-001':'вул. Дерибасівська · демо-точка','CNT-002':'Приморський бульвар · демо-точка','CNT-003':'вул. Преображенська · демо-точка','CNT-004':'вул. Михайла Грушевського · демо-точка','CNT-005':'Аркадійська алея · демо-точка','CNT-006':'Французький бульвар · демо-точка','CNT-007':'Миколаївська дорога · демо-точка','CNT-008':'вул. Пантелеймонівська · демо-точка','CNT-009':'вул. Космонавтів · демо-точка','CNT-010':'вул. Академіка Корольова · демо-точка'},
+  en: {'CNT-001':'Derybasivska Street · demo location','CNT-002':'Primorskyi Boulevard · demo location','CNT-003':'Preobrazhenska Street · demo location','CNT-004':'Mykhaila Hrushevskoho Street · demo location','CNT-005':'Arkadiyska Alley · demo location','CNT-006':'French Boulevard · demo location','CNT-007':'Mykolaivska Road · demo location','CNT-008':'Panteleimonivska Street · demo location','CNT-009':'Kosmonavtiv Street · demo location','CNT-010':'Akademika Korolyova Street · demo location'},
 };
 const distanceKm = (a: Pick<DeviceLocation,'latitude'|'longitude'>, b: Pick<Bin,'latitude'|'longitude'>) => {
   const rad = (value: number) => value * Math.PI / 180;
@@ -47,8 +49,8 @@ export default function App() {
   const [plannedOrigin,setPlannedOrigin]=useState<DeviceLocation|null>(null);
   const [routeMessage,setRouteMessage]=useState<MessageKey|null>(null);
   const locationRequested=useRef(false);
-  const displayBinName=(bin:Bin)=>{const number=bin.name.match(/^(?:Контейнер|Container)\s*(\d+)$/i)?.[1];return number?`${t('container')} ${number}`:bin.name;};
-  const displayBinAddress=(bin:Bin)=>/демо-точка|demo location/i.test(bin.address)?demoAddresses[language][bin.id]||bin.address:bin.address;
+  const displayBinName=(bin:Bin)=>{const number=bin.name.match(/^(?:Контейнер|Container)\s*(\d+)$/i)?.[1]??bin.id.match(/^CNT-(\d+)$/)?.[1];return number?`${t('container')} ${number.slice(-2)}`:bin.name;};
+  const displayBinAddress=(bin:Bin)=>demoAddresses[language][bin.id]||bin.address;
 
   useEffect(()=>{localStorage.setItem('ecoroute-language',language);document.documentElement.lang=language;},[language]);
 
@@ -91,7 +93,7 @@ export default function App() {
     requestLocation();
   }, []);
 
-  useEffect(()=>{const refresh=async()=>{try{const [b,s]=await Promise.all([fetch('/api/containers'),fetch('/api/stats')]); if(!b.ok||!s.ok)throw new Error(); setBins(await b.json());setStats(await s.json());}catch{setBins(current=>current.length?current:demoBins);setStats(current=>current.total?current:{total:demoBins.length,full:2,warning:2,average:63,online:8});}}; void refresh(); const timer=setInterval(()=>{void refresh();setTime(new Date());},15000);return()=>clearInterval(timer)},[]);
+  useEffect(()=>{const refresh=async()=>{try{const [b,s]=await Promise.all([fetch('/api/containers'),fetch('/api/stats')]); if(!b.ok||!s.ok)throw new Error(); setBins(await b.json());setStats(await s.json());}catch{setBins(current=>current.length?current:demoBins);setStats(current=>current.total?current:{total:demoBins.length,full:2,warning:3,average:64,online:10});}}; void refresh(); const timer=setInterval(()=>{void refresh();setTime(new Date());},15000);return()=>clearInterval(timer)},[]);
   const visibleBins=useMemo(()=>bins.filter(b=>(filter==='all'||b.status===filter)&&`${b.name} ${b.address} ${b.id}`.toLowerCase().includes(query.toLowerCase())),[bins,filter,query]);
   const selectedBin=bins.find(b=>b.id===selected);
   const routeCandidates=useMemo(()=>bins.filter(b=>b.status==='full'),[bins]);
