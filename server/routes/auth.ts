@@ -2,7 +2,7 @@ import { randomBytes } from 'node:crypto';
 import { Router } from 'express';
 import { clearSessionCookie, createSession, hashPassword, hashToken, requireAuth, sessionToken, verifyPassword } from '../auth';
 import { pool } from '../db/pool';
-import { emailDeliveryConfigured, sendVerificationEmail } from '../mail';
+import { emailDeliveryConfigured, sendPasswordResetEmail, sendVerificationEmail } from '../mail';
 
 const router = Router();
 const attempts = new Map<string, { count: number; resetAt: number }>();
@@ -99,6 +99,44 @@ router.post('/login', async (req, res, next) => {
     await createSession(rows[0].id, res);
     res.json({ user: { id: rows[0].id, email: rows[0].email } });
   } catch (error) { next(error); }
+});
+
+router.post('/forgot-password', async (req, res, next) => {
+  try {
+    const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
+    if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { res.status(400).json({ error: 'Enter a valid email' }); return; }
+    if (!emailDeliveryConfigured()) { res.status(503).json({ error: 'Email delivery is not configured' }); return; }
+    const { rows } = await pool.query('SELECT id,email FROM auth_users WHERE email=$1 AND email_verified_at IS NOT NULL', [email]);
+    if (rows[0]) {
+      const token = randomBytes(32).toString('base64url');
+      await pool.query('DELETE FROM password_reset_tokens WHERE user_id=$1 OR expires_at <= NOW()', [rows[0].id]);
+      await pool.query('INSERT INTO password_reset_tokens(user_id,token_hash,expires_at) VALUES($1,$2,NOW()+INTERVAL \'1 hour\')', [rows[0].id, hashToken(token)]);
+      try { await sendPasswordResetEmail(rows[0].email, token); }
+      catch (error) { await pool.query('DELETE FROM password_reset_tokens WHERE user_id=$1', [rows[0].id]); throw error; }
+    }
+    res.json({ message: 'If a verified account exists for that email, a reset link has been sent.' });
+  } catch (error) { next(error); }
+});
+
+router.post('/reset-password', async (req, res, next) => {
+  const token = typeof req.body?.token === 'string' ? req.body.token : '';
+  const password = req.body?.password;
+  if (token.length < 32 || token.length > 128 || typeof password !== 'string' || password.length < 12 || password.length > 128) {
+    res.status(400).json({ error: 'Use a valid reset link and a password of 12-128 characters' }); return;
+  }
+  const client = await pool.connect();
+  try {
+    const passwordHash = await hashPassword(password);
+    await client.query('BEGIN');
+    const { rows } = await client.query('DELETE FROM password_reset_tokens WHERE token_hash=$1 AND expires_at > NOW() RETURNING user_id', [hashToken(token)]);
+    if (!rows[0]) { await client.query('ROLLBACK'); res.status(400).json({ error: 'This reset link is invalid or has expired' }); return; }
+    await client.query('UPDATE auth_users SET password_hash=$1 WHERE id=$2', [passwordHash, rows[0].user_id]);
+    await client.query('DELETE FROM password_reset_tokens WHERE user_id=$1', [rows[0].user_id]);
+    await client.query('DELETE FROM auth_sessions WHERE user_id=$1', [rows[0].user_id]);
+    await client.query('COMMIT');
+    res.json({ message: 'Password updated. You can now sign in.' });
+  } catch (error) { await client.query('ROLLBACK'); next(error); }
+  finally { client.release(); }
 });
 
 router.get('/me', requireAuth, async (req, res, next) => {

@@ -23,3 +23,23 @@ export async function sendVerificationEmail(to: string, token: string) {
     html: `<p>Confirm your EcoRoute account by clicking the link below:</p><p><a href="${verificationUrl}">Verify email address</a></p><p>This link expires in 24 hours. If you did not create this account, ignore this email.</p>`,
   });
 }
+
+export async function sendPasswordResetEmail(to: string, token: string) {
+  if (!emailDeliveryConfigured()) throw new Error('Email delivery is not configured');
+  const port = Number(process.env.SMTP_PORT || 587);
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port,
+    secure: process.env.SMTP_SECURE === 'true' || port === 465,
+    auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+  });
+  const baseUrl = process.env.APP_BASE_URL!.replace(/\/$/, '');
+  const resetUrl = `${baseUrl}/?resetToken=${encodeURIComponent(token)}`;
+  await transporter.sendMail({
+    from: process.env.MAIL_FROM,
+    to,
+    subject: 'Reset your EcoRoute password',
+    text: `Reset your EcoRoute password by opening this link: ${resetUrl}\nThis link expires in 1 hour. If you did not request a reset, ignore this email.`,
+    html: `<p>Reset your EcoRoute password by clicking the link below:</p><p><a href="${resetUrl}">Reset password</a></p><p>This link expires in 1 hour. If you did not request a reset, ignore this email.</p>`,
+  });
+}
