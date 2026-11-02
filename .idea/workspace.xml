@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c1c81f0-7257-45a1-b437-480c506ade79" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/mail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/AuthGate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/AuthGate.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="1c1c81f0-7257-45a1-b437-480c506ade79" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,7 +178,7 @@
       <workItem from="1793614089361" duration="503000" />
       <workItem from="1793637417106" duration="7759000" />
       <workItem from="1793648636293" duration="373000" />
-      <workItem from="1793649331128" duration="755000" />
+      <workItem from="1793649331128" duration="881000" />
     </task>
     <servers />
   </component>
