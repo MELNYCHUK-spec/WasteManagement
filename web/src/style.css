@@ -127,3 +127,21 @@
 .map-panel.expanded .panel-heading{flex:none;padding:14px 16px}
 .map-panel.expanded .map-wrap{flex:1;min-height:0;height:auto;margin:0 12px 12px}
 @media(max-width:520px){.map-heading-actions{gap:5px}.map-panel.expanded .panel-heading{padding:11px 10px}.map-panel.expanded .map-wrap{margin:0 7px 7px}}
+/* Email/password sign-in */
+.auth-page{min-height:100vh;display:grid;place-items:center;padding:24px;background:#f4f7f2;font-family:'DM Sans',sans-serif;color:#263329}
+.auth-card{width:min(100%,390px);padding:34px;background:#fff;border:1px solid #e4ebe2;border-radius:16px;box-shadow:0 18px 55px #263a2a12}
+.auth-brand{font:800 24px Manrope,sans-serif;color:#58906a;letter-spacing:-1px}
+.auth-card h1{margin:24px 0 5px;font:700 24px Manrope,sans-serif}
+.auth-card p{margin:0 0 24px;color:#859087;font-size:13px;line-height:1.5}
+.auth-card label{display:block;margin:14px 0;color:#576258;font-size:12px;font-weight:600}
+.auth-card input{box-sizing:border-box;width:100%;height:42px;margin-top:7px;padding:0 12px;border:1px solid #dce5da;border-radius:7px;background:#fcfdfb;font:14px 'DM Sans',sans-serif;color:#263329;outline:none}
+.auth-card input:focus{border-color:#68a47a;box-shadow:0 0 0 3px #68a47a20}
+.auth-hint{display:block;color:#8a958a;font-size:11px}
+.auth-error{padding:10px;border-radius:6px;background:#fbefed;color:#b54f46;font-size:12px}
+.auth-success{padding:10px;border-radius:6px;background:#edf5ee;color:#39754d;font-size:12px;line-height:1.5}
+.auth-submit{width:100%;height:43px;margin-top:14px;border:0;border-radius:7px;background:#4b8a60;color:white;font-size:13px;font-weight:700;cursor:pointer}
+.auth-submit:disabled{opacity:.65;cursor:wait}
+.auth-toggle{width:100%;margin-top:14px;padding:8px;border:0;background:transparent;color:#548c63;font-size:12px;cursor:pointer}
+.auth-account{display:flex;align-items:center;gap:7px;max-width:245px;overflow:hidden;color:#717c72;font-size:10px;white-space:nowrap;text-overflow:ellipsis}
+.auth-account button{padding:5px 8px;border:1px solid #e3e9e1;border-radius:5px;background:#fff;color:#548c63;font-size:10px;cursor:pointer}
+@media(max-width:520px){.auth-account{font-size:0}.auth-account button{font-size:10px}}

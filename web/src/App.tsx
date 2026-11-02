@@ -6,6 +6,7 @@ import type { DeviceLocation } from './types/location';
 import { statusLabel } from './i18n';
 import type { Language, MessageKey } from './i18n';
 import { translate } from './i18n';
+import AuthGate from './AuthGate';
 
 type Stats = { total: number; full: number; warning: number; average: number; online: number };
 const initialStats: Stats = { total: 0, full: 0, warning: 0, average: 0, online: 0 };
@@ -33,7 +34,7 @@ const distanceKm = (a: Pick<DeviceLocation,'latitude'|'longitude'>, b: Pick<Bin,
   return 6371 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
 };
 
-export default function App() {
+function Dashboard({ email, onLogout }: { email: string; onLogout: () => void }) {
   const [language,setLanguage]=useState<Language>(()=>localStorage.getItem('ecoroute-language')==='en'?'en':'uk');
   const t=(key:MessageKey)=>translate(language,key);
   const [bins,setBins] = useState<Bin[]>([]); const [stats,setStats]=useState(initialStats);
@@ -128,7 +129,7 @@ export default function App() {
   };
   return <div className="app-shell">
     <main className="main-content">
-      <header className="topbar"><div className="brand-wordmark"><span>eco</span>route <small>SMART WASTE SYSTEM</small></div><div className="top-actions"><span className="live-status"><i/> {t('live')}</span><div className="language-switch" aria-label={t('language')}><button className={language==='uk'?'active':''} onClick={()=>setLanguage('uk')} aria-pressed={language==='uk'}>UA</button><button className={language==='en'?'active':''} onClick={()=>setLanguage('en')} aria-pressed={language==='en'}>EN</button></div><span className="top-date"><Clock3 size={15}/>{time.toLocaleTimeString(language==='uk'?'uk-UA':'en-GB',{hour:'2-digit',minute:'2-digit'})}</span></div></header>
+      <header className="topbar"><div className="brand-wordmark"><span>eco</span>route <small>SMART WASTE SYSTEM</small></div><div className="top-actions"><span className="live-status"><i/> {t('live')}</span><span className="auth-account" title={email}>{email}<button onClick={onLogout}>Sign out</button></span><div className="language-switch" aria-label={t('language')}><button className={language==='uk'?'active':''} onClick={()=>setLanguage('uk')} aria-pressed={language==='uk'}>UA</button><button className={language==='en'?'active':''} onClick={()=>setLanguage('en')} aria-pressed={language==='en'}>EN</button></div><span className="top-date"><Clock3 size={15}/>{time.toLocaleTimeString(language==='uk'?'uk-UA':'en-GB',{hour:'2-digit',minute:'2-digit'})}</span></div></header>
       <section className="page-heading"><div><div className="eyebrow">{time.toLocaleDateString(language==='uk'?'uk-UA':'en-GB',{weekday:'long',day:'numeric',month:'long'}).toLocaleUpperCase(language==='uk'?'uk-UA':'en-GB')}</div><h1>{t('appTitle')}</h1><p>{t('appSubtitle')}</p></div></section>
       <section className="stats-grid">
         <article className="stat-card"><div className="stat-top"><span>{t('total')}</span><span className="stat-icon green"><Container size={17}/></span></div><div className="stat-value">{stats.total}<small> {t('units')}</small></div><div className="stat-foot"><span className="positive">●</span> {t('allMapPoints')}</div></article>
@@ -158,4 +159,23 @@ export default function App() {
     </main>
     {selectedBin&&<div className="toast"><div className={`bin-symbol ${selectedBin.status}`}><Container size={16}/></div><span><b>{displayBinName(selectedBin)}</b><small>{displayBinAddress(selectedBin)} · {selectedBin.fill_percent}%</small></span><button onClick={()=>setSelected(null)} aria-label={t('close')}>×</button></div>}
   </div>;
+}
+
+export default function App() {
+  const [email, setEmail] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    fetch('/api/auth/me').then(async (response) => {
+      if (!response.ok) return null;
+      const payload = await response.json();
+      return payload.user.email as string;
+    }).then(setEmail).catch(() => setEmail(null)).finally(() => setLoading(false));
+  }, []);
+  if (loading) return <main className="auth-page"><div className="auth-card">Loading…</div></main>;
+  if (!email) return <AuthGate onAuthenticated={setEmail} />;
+  const logout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    setEmail(null);
+  };
+  return <Dashboard email={email} onLogout={() => void logout()} />;
 }

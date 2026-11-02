@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c1c81f0-7257-45a1-b437-480c506ade79" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/20261025_hurghada_demo_locations.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/20261027_odesa_demo_locations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/20261027_odesa_demo_locations.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/measurements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/measurements.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/i18n.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/i18n.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,23 +49,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.6976270283850032" />
-      <entry key="MS500" value="4.424029253875651" />
-      <entry key="S2" value="11.438703862424607" />
-      <entry key="S5" value="23.646075591783717" />
-      <entry key="S10" value="37.20302932363045" />
-      <entry key="S30" value="56.249137345063616" />
-      <entry key="S60" value="68.27241795850615" />
-      <entry key="M2" value="92.75663671235866" />
-      <entry key="M5" value="146.2765598626895" />
-      <entry key="M10" value="214.45538377847498" />
-      <entry key="M15" value="282.8437076832529" />
-      <entry key="M30" value="437.1709914869149" />
-      <entry key="H1" value="619.1121562245903" />
-      <entry key="H2" value="898.5758301453526" />
-      <entry key="H4" value="1258.1785525580678" />
-      <entry key="D1" value="1865.5302273548034" />
-      <entry key="W1" value="2017.812593901296" />
+      <entry key="MS100" value="1.0006383444082032" />
+      <entry key="MS500" value="1.6021259107995762" />
+      <entry key="S2" value="8.404687158584348" />
+      <entry key="S5" value="16.283818744346572" />
+      <entry key="S10" value="21.790936518475895" />
+      <entry key="S30" value="37.33182534647216" />
+      <entry key="S60" value="55.15616601723202" />
+      <entry key="M2" value="80.09392671347247" />
+      <entry key="M5" value="132.35367378986834" />
+      <entry key="M10" value="197.4355035327931" />
+      <entry key="M15" value="247.19018949468995" />
+      <entry key="M30" value="362.84038379202536" />
+      <entry key="H1" value="585.8026493962709" />
+      <entry key="H2" value="980.7462791462855" />
+      <entry key="H4" value="1513.587960728513" />
+      <entry key="D1" value="2534.7256823419643" />
+      <entry key="W1" value="2815.7919574479165" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -85,23 +87,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.637648676971433" />
-      <entry key="MS500" value="4.395450407723047" />
-      <entry key="S2" value="11.420301896307857" />
-      <entry key="S5" value="23.630822647021336" />
-      <entry key="S10" value="37.19089811108565" />
-      <entry key="S30" value="56.24294315326735" />
-      <entry key="S60" value="68.26862818027647" />
-      <entry key="M2" value="92.75400611707293" />
-      <entry key="M5" value="146.27482611304356" />
-      <entry key="M10" value="214.45402225753577" />
-      <entry key="M15" value="282.8424483535598" />
-      <entry key="M30" value="437.1699581116491" />
-      <entry key="H1" value="619.1113929038927" />
-      <entry key="H2" value="898.5752486122379" />
-      <entry key="H4" value="1258.1781310062129" />
-      <entry key="D1" value="1865.5301201416335" />
-      <entry key="W1" value="2017.8125772606422" />
+      <entry key="MS100" value="0.980036937152187" />
+      <entry key="MS500" value="1.5942729159361024" />
+      <entry key="S2" value="8.392542343526866" />
+      <entry key="S5" value="16.27421714869721" />
+      <entry key="S10" value="21.784458843204117" />
+      <entry key="S30" value="37.327915599867595" />
+      <entry key="S60" value="55.150752865477045" />
+      <entry key="M2" value="80.08424854609869" />
+      <entry key="M5" value="132.34335420331726" />
+      <entry key="M10" value="197.42733620671936" />
+      <entry key="M15" value="247.18327730564764" />
+      <entry key="M30" value="362.8355177494302" />
+      <entry key="H1" value="585.7994812693489" />
+      <entry key="H2" value="980.7442936466749" />
+      <entry key="H4" value="1513.5867468026934" />
+      <entry key="D1" value="2534.725414618651" />
+      <entry key="W1" value="2815.79191668714" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -130,30 +132,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/WebstormProjects/WasteManagement",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "D:\\WebstormProjects\\WasteManagement\\node_modules\\typescript\\lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WebstormProjects/WasteManagement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\WebstormProjects\\WasteManagement\\node_modules\\typescript\\lib&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WebstormProjects\WasteManagement" />
@@ -162,7 +164,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.10968.77" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.11879.105" />
       </set>
     </attachedChunks>
   </component>
@@ -183,7 +185,11 @@
       <workItem from="1793098448806" duration="1661000" />
       <workItem from="1793177374856" duration="4049000" />
       <workItem from="1793202482359" duration="60000" />
-      <workItem from="1793202551959" duration="2339000" />
+      <workItem from="1793202551959" duration="2630000" />
+      <workItem from="1793205263576" duration="519000" />
+      <workItem from="1793205793098" duration="682000" />
+      <workItem from="1793614089361" duration="503000" />
+      <workItem from="1793637417106" duration="7302000" />
     </task>
     <servers />
   </component>
